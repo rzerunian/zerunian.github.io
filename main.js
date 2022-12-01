@@ -273,7 +273,7 @@ async function checkLoadParameters() {
       return;
     } else showUploadErrorMessage("Map link is not a valid URL", maplink);
   } else {
-    const maplink = https://raw.githubusercontent.com/rzerunian/AzgaardPersonalMap/main/Axios.map;
+    const maplink = "https://raw.githubusercontent.com/rzerunian/AzgaardPersonalMap/main/Axios.map";
     const pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     const valid = pattern.test(maplink);
     if (valid) {
