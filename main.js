@@ -272,6 +272,16 @@ async function checkLoadParameters() {
       }, 1000);
       return;
     } else showUploadErrorMessage("Map link is not a valid URL", maplink);
+  } else {
+    const maplink = https://raw.githubusercontent.com/rzerunian/AzgaardPersonalMap/main/Axios.map;
+    const pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    const valid = pattern.test(maplink);
+    if (valid) {
+      setTimeout(() => {
+        loadMapFromURL(maplink, 1);
+      }, 1000);
+      return;
+    } else showUploadErrorMessage("Map link is not a valid URL", maplink);
   }
 
   // if there is a seed (user of MFCG provided), generate map for it
