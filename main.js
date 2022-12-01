@@ -351,6 +351,7 @@ function focusOn() {
   const scaleParam = params.get("scale");
   const cellParam = params.get("cell");
   const burgParam = params.get("burg");
+  const notionParam = params.get("notion");
 
   if (scaleParam || cellParam || burgParam) {
     const scale = +scaleParam || 8;
@@ -374,6 +375,8 @@ function focusOn() {
     const x = +params.get("x") || graphWidth / 2;
     const y = +params.get("y") || graphHeight / 2;
     zoomTo(x, y, scale, 1600);
+  } else if (notionParam) {
+    zoomTo(1536, 600, 2.5, 1600);
   } else {
     zoomTo(1520, 550, 2.5, 1600);
   }
