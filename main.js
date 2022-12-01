@@ -373,7 +373,9 @@ function focusOn() {
 
     const x = +params.get("x") || graphWidth / 2;
     const y = +params.get("y") || graphHeight / 2;
-    zoomTo(1536, 520, 2.5, 1600);
+    zoomTo(x, y, scale, 1600);
+  } else {
+    zoomTo(1500, 520, 2.5, 1600);
   }
 }
 
