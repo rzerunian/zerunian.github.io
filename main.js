@@ -360,9 +360,6 @@ function focusOn() {
       const [x, y] = pack.cells.p[cell];
       zoomTo(x, y, scale, 1600);
       return;
-    } else {
-      zoomTo(1536, 550, 2.5, 1600);
-      return;
     }
 
     if (burgParam) {
@@ -376,7 +373,7 @@ function focusOn() {
 
     const x = +params.get("x") || graphWidth / 2;
     const y = +params.get("y") || graphHeight / 2;
-    zoomTo(x, y, scale, 1600);
+    zoomTo(1536, 520, 2.5, 1600);
   }
 }
 
