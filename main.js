@@ -378,7 +378,7 @@ function focusOn() {
   } else if (notionParam) {
     zoomTo(1520, 550, 2.5, 1600);
   } else {
-    zoomTo(1250, 590, 2.5, 1600);
+    zoomTo(1000, 590, 2.5, 1600);
   }
 }
 
