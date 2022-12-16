@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Add some styling to give the callout block a Notion-like appearance */
+      .callout {
+        background-color: #fafbfc;
+        border: 1px solid #dfe2e5;
+        border-radius: 3px;
+        padding: 16px;
+        margin: 16px 0;
+      }
+      .callout p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="callout">
+      <p id="callout-text">This is a callout block, similar to the ones used in Notion.</p>
+    </div>
+
+    <script src="./iniciativa.js"></script>
+
+    <script>
+      // Get a reference to the paragraph element
+      const calloutText = document.getElementById('callout-text');
+
+      // Replace the text with a variable value
+      const message = '\n' + valorIniciativa;
+      calloutText.textContent = message;
+    </script>
+    
+  </body>
+</html>
