@@ -1,9 +1,50 @@
-const iniciativa = document.getElementById('iniciativa');
-iniciativa.addEventListener('click', async () => {
-    const pageId = '0be1ac8f-b627-4772-8071-3eb49f0a7cce'; // Replace with the ID of the page you want to update
-    const databaseId = '67dcac7a-ef27-409e-9857-fc40208b8953'; // Replace with the ID of the database you want to update
-    const property = 'Iniciativa'; // Replace with the name of the property you want to update
-    const value = '5'; // Replace with the new value you want to set
+// script.js
+
+// Replace YOUR_DATABASE_ID and YOUR_API_KEY with your own values
+const databaseId = '0be1ac8fb627477280713eb49f0a7cce';
+const apiKey = 'secret_Hz5rN4bBP6kXPsOaZERP35OMagBipwN5sumECgVia8W';
+
+// Create a function to update the value in the database
+async function updateValue() {
+  // Set the new value that you want to update in the database
+  const newValue = '5';
+
+  // Make an HTTP POST request to the Notion API using the database ID and API key
+  const response = await fetch(`https://api.notion.com/v1/databases/${databaseId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      // Set the property that you want to update in the database
+        properties: {
+          [property]: {
+            rich_text: newValue
+            }
+          }
+        })
+    });
+
+  // Check the response status to see if the update was successful
+  if (response.status === 200) {
+    console.log('Value updated successfully');
+  } else {
+    console.error('Error updating value');
+  }
+}
+
+// Add an event listener to the button element that calls the updateValue function when the button is clicked
+const updateButton = document.getElementById('iniciativa');
+updateButton.addEventListener('click', updateValue);
+
+    
+    
+    
+    
+    
+    
+    
 
     const response = await fetch(`https://api.notion.com/v3/updatePage`, {
       method: 'POST',
