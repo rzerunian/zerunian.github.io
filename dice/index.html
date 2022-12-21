@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Include the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -41,6 +43,36 @@
 </body>
 <!-- partial -->
 </div>
-<script src="./script.js"></script>
+    
+<body>
+    <script>
+      // Add a click event listener to the button
+      $('#iniciativa').click(() => {
+        // Make an HTTP request to the Notion API to update a value in a database
+        $.ajax({
+          url: 'https://api.notion.com/v3/updatePage',
+          type: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer secret_Hz5rN4bBP6kXPsOaZERP35OMagBipwN5sumECgVia8W`
+          },
+          data: JSON.stringify({
+            pageId: '0be1ac8fb627477280713eb49f0a7cce',
+            properties: {
+              Iniciativa: {
+                rich_text: [['5']]
+              }
+            }
+          }),
+          success: (response) => {
+            console.log(response);
+          },
+          error: (xhr, status, error) => {
+            console.error(error);
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
   
